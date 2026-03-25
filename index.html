@@ -65,7 +65,7 @@
   }
 
   .important {
-    background: #f87171; /* red */
+    background: #f87171;
     color: #fff;
     padding: 12px 18px;
     border-radius: 8px;
@@ -110,7 +110,6 @@
     text-decoration: underline;
   }
 
-  /* Visitor counter floating box */
   #visitor-counter {
     position: fixed;
     bottom: 15px;
@@ -131,74 +130,81 @@
 <button onclick="toggleLanguage()">🌐 عربي / English</button>
 
 <header>
-  <h1>Teenage Mental Health Awareness</h1>
-  <p>Jordan and the Middle East</p>
+  <h1 id="title">Teenage Mental Health Awareness</h1>
+  <p id="subtitle">Jordan and the Middle East</p>
   <span>by Ghazal AlK</span>
 </header>
 
 <section>
 
-<h2>The Growing Importance</h2>
+<h2 id="h1">The Growing Importance</h2>
 <div class="card">
-<p>
+<p id="p1">
 Mental health among teenagers has become a major global issue. Adolescence is a critical developmental stage marked by emotional, social, and psychological changes. Studies show that approximately one in seven adolescents experiences mental health disorders, with anxiety and depression being the most common.
 </p>
-<div class="important">
+<div class="important" id="i1">
 ⚠️ Important: 1 in 7 teens globally faces mental health challenges — early awareness can save lives.
 </div>
 </div>
 
-<h2>Mental Health in Jordan</h2>
+<h2 id="h2">Mental Health in Jordan</h2>
 <div class="card">
-<p>
+<p id="p2">
 Jordan has a very young population, making youth mental health especially important. Several factors increase risks:
 </p>
-<ul>
+<ul id="ul2">
 <li>Economic pressures and unemployment</li>
 <li>Large refugee population</li>
 <li>Educational and social stress</li>
 <li>Exposure to regional conflict and instability</li>
 </ul>
-<div class="important">
+<div class="important" id="i2">
 ⚠️ Important: Nearly half of Jordan’s population is under 19 — adolescent mental health is crucial.
 </div>
 </div>
 
-<h2>Cultural Barriers and Stigma</h2>
+<h2 id="h3">Cultural Barriers and Stigma</h2>
 <div class="card">
-<p>
-Stigma is one of the biggest barriers. Many people still associate mental illness with weakness or failure. Teenagers often feel isolated or afraid to speak openly about their struggles.
+<p id="p3">
+Stigma and cultural expectations significantly impact teen mental health. Many teenagers face:
 </p>
-<div class="important">
-⚠️ Important: Stigma prevents teens from seeking help — open conversations save lives.
+<ul id="ul3">
+<li>High academic pressure and fear of failure</li>
+<li>Family expectations for behavior, career, and social conduct</li>
+<li>Social pressure to conform to cultural norms and standards</li>
+<li>Fear of judgment, shame, or gossip if seeking help</li>
+<li>Limited understanding of mental health in their communities</li>
+</ul>
+<p id="p3b">
+These combined pressures can cause isolation, anxiety, and depression, making it hard for teens to express their struggles or seek support.
+</p>
+<div class="important" id="i3">
+⚠️ Important: Cultural and social pressures increase mental health risks — awareness and safe spaces are key.
 </div>
 </div>
 
-<h2>Solutions and Awareness</h2>
+<h2 id="h4">Solutions and Awareness</h2>
 <div class="card">
-<ul>
+<ul id="ul4">
 <li>Encourage open discussions within families and schools</li>
 <li>Educate students about emotional well-being and coping strategies</li>
 <li>Improve access to professional mental health services</li>
 <li>Launch public awareness campaigns to reduce stigma</li>
 </ul>
-<div class="important">
+<div class="important" id="i4">
 ⚠️ Important: Awareness + support systems = healthier, happier teens.
 </div>
 </div>
 
-<h2>Support & Hotlines</h2>
+<h2 id="h5">Support & Hotlines</h2>
 <div class="card hotline-card">
-<p><strong>If you or someone you know is struggling with mental health, depression, or suicidal thoughts, reach out for help immediately.</strong></p>
-<ul>
+<p id="p5"><strong>If you or someone you know is struggling with mental health, depression, or suicidal thoughts, reach out for help immediately.</strong></p>
+<ul id="ul5">
 <li>Jordanian Mental Health Hotline: <a class="hotline" href="tel:+962798888888">+962 79 888 8888</a></li>
 <li>Embrace Help Center (Jordan): <a class="hotline" href="tel:+96265555555">+962 65 555 555</a></li>
 <li>Regional Online Support: <a class="hotline" href="https://www.iamaware.org/">iamaware.org</a></li>
 </ul>
-<p>
-<strong>Remember:</strong> You are not alone. Thinking about reaching out is the first step.
-</p>
-<div class="important">
+<div class="important" id="i5">
 ⚠️ Important: Always reach out to a trusted adult, counselor, or hotline if you feel unsafe or distressed.
 </div>
 </div>
@@ -206,23 +212,56 @@ Stigma is one of the biggest barriers. Many people still associate mental illnes
 </section>
 
 <footer>
-<p>© 2026 School Project | Please seek help if struggling with mental health or suicidal thoughts.</p>
+<p id="footer">© 2026 School Project | Please seek help if struggling with mental health or suicidal thoughts.</p>
 </footer>
 
-<!-- Visitor counter floating -->
 <div id="visitor-counter">Visitors: <span id="counter">Loading...</span></div>
 
 <script>
+/* LANGUAGE TOGGLE */
+let isArabic = false;
 function toggleLanguage() {
-  document.body.classList.toggle("arabic");
+  isArabic = !isArabic;
+  if(isArabic) {
+    document.body.classList.add("arabic");
+
+    document.getElementById("title").innerText = "التوعية بالصحة النفسية للمراهقين";
+    document.getElementById("subtitle").innerText = "الأردن والشرق الأوسط";
+    document.getElementById("h1").innerText = "الأهمية المتزايدة";
+    document.getElementById("p1").innerText = "أصبحت الصحة النفسية بين المراهقين قضية عالمية هامة. فترة المراهقة مرحلة حرجة تتميز بتغيرات عاطفية واجتماعية ونفسية. تشير الدراسات إلى أن حوالي واحد من كل سبعة مراهقين يعاني من اضطرابات نفسية مثل القلق والاكتئاب.";
+    document.getElementById("i1").innerText = "⚠️ مهم: واحد من كل سبعة مراهقين يواجه تحديات صحية نفسية — الوعي المبكر يمكن أن ينقذ حياتهم.";
+
+    document.getElementById("h2").innerText = "الصحة النفسية في الأردن";
+    document.getElementById("p2").innerText = "يحتوي الأردن على نسبة كبيرة من الشباب، ما يجعل الصحة النفسية للمراهقين مهمة جداً. هناك عدة عوامل تزيد من المخاطر:";
+    document.getElementById("ul2").innerHTML = "<li>الضغوط الاقتصادية والبطالة</li><li>وجود عدد كبير من اللاجئين</li><li>التوترات التعليمية والاجتماعية</li><li>التعرض للصراعات وعدم الاستقرار الإقليمي</li>";
+    document.getElementById("i2").innerText = "⚠️ مهم: ما يقارب نصف سكان الأردن تحت سن 19 — الصحة النفسية للمراهقين أمر حيوي.";
+
+    document.getElementById("h3").innerText = "الحواجز الثقافية والوصمة";
+    document.getElementById("p3").innerText = "تؤثر الوصمة والتوقعات الثقافية بشكل كبير على الصحة النفسية للمراهقين. يواجه العديد من المراهقين:";
+    document.getElementById("ul3").innerHTML = "<li>ضغط أكاديمي مرتفع وخوف من الفشل</li><li>توقعات الأسرة للسلوك والمستقبل</li><li>الضغط الاجتماعي للامتثال للمعايير الثقافية</li><li>الخوف من الحكم أو العار عند طلب المساعدة</li><li>قلة الوعي بالصحة النفسية في المجتمع</li>";
+    document.getElementById("p3b").innerText = "تؤدي هذه الضغوط إلى العزلة والقلق والاكتئاب، مما يصعب على المراهقين التعبير عن مشاعرهم أو طلب الدعم.";
+    document.getElementById("i3").innerText = "⚠️ مهم: الضغوط الثقافية والاجتماعية تزيد من المخاطر — الوعي ووجود بيئات آمنة أساسي.";
+
+    document.getElementById("h4").innerText = "الحلول والوعي";
+    document.getElementById("ul4").innerHTML = "<li>تشجيع النقاش المفتوح داخل الأسرة والمدارس</li><li>تثقيف الطلاب حول الصحة النفسية واستراتيجيات التكيف</li><li>تحسين الوصول إلى الخدمات المهنية للصحة النفسية</li><li>إطلاق حملات توعية عامة لتقليل الوصمة</li>";
+    document.getElementById("i4").innerText = "⚠️ مهم: الوعي + أنظمة الدعم = مراهقون أكثر صحة وسعادة.";
+
+    document.getElementById("h5").innerText = "الدعم وخطوط المساعدة";
+    document.getElementById("p5").innerText = "إذا كنت أنت أو شخص تعرفه يعاني من مشاكل نفسية، اكتئاب، أو أفكار انتحارية، تواصل للحصول على المساعدة فوراً.";
+    document.getElementById("ul5").innerHTML = "<li>خط الصحة النفسية الأردني: <a class='hotline' href='tel:+962798888888'>+962 79 888 8888</a></li><li>مركز Embrace للمساعدة (الأردن): <a class='hotline' href='tel:+96265555555'>+962 65 555 555</a></li><li>الدعم الإقليمي عبر الإنترنت: <a class='hotline' href='https://www.iamaware.org/'>iamaware.org</a></li>";
+    document.getElementById("i5").innerText = "⚠️ مهم: تواصل دائماً مع شخص بالغ موثوق أو خط مساعدة إذا شعرت بعدم الأمان أو الضيق.";
+
+    document.getElementById("footer").innerText = "© 2026 مشروع مدرسي | الرجاء طلب المساعدة إذا كنت تعاني من مشاكل نفسية أو أفكار انتحارية";
+
+  } else {
+    location.reload(); // revert to English
+  }
 }
 
 /* Visitor counter */
 fetch("https://api.countapi.xyz/hit/jordanmentalhealthproject2026/visits")
 .then(res => res.json())
-.then(res => {
-  document.getElementById("counter").innerText = res.value;
-});
+.then(res => { document.getElementById("counter").innerText = res.value; });
 </script>
 
 </body>
